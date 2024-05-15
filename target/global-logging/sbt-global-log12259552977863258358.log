@@ -1,0 +1,9 @@
+[debug] > Exec({file:/H:/estudos/Pogramadero/scala3/}root/compile, None, None)
+[debug] Evaluating tasks: Compile / compile
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[info] compiling 5 Scala sources to H:\estudos\Pogramadero\scala3\target\scala-3.3.0\classes ...
+[info] done compiling
+[success] Total time: 8 s, completed 30 de dez. de 2023 19:19:09
+[debug] > Exec(idea-shell, None, None)
+[debug] > Exec(, None, None)
+[debug] > Exec(idea-shell, None, None)

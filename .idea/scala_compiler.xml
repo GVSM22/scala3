@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ScalaCompilerConfiguration">
+    <profile name="sbt 1" modules="scala3">
+      <parameters>
+        <parameter value="-Ykind-projector:underscores" />
+        <parameter value="-Xsemanticdb" />
+        <parameter value="-semanticdb-target" />
+        <parameter value="H:\estudos\Pogramadero\scala3\target\scala-3.4.1\meta" />
+      </parameters>
+    </profile>
+  </component>
+</project>
