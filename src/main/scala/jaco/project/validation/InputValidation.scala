@@ -3,7 +3,7 @@ package jaco.project.validation
 import cats.data.Kleisli
 import cats.implicits.catsSyntaxApplicativeError
 import cats.syntax.all.{catsSyntaxFunction1FlatMap, toFunctorOps}
-import cats.{ApplicativeError, ApplicativeThrow, Apply, MonadThrow}
+import cats.{ApplicativeError, ApplicativeThrow, Functor, MonadThrow}
 import jaco.project.error.{InputError, NotEE}
 import jaco.project.handler.*
 
@@ -33,10 +33,10 @@ object InputValidation:
     if (number == 418) ae.pure(number)
     else ae.raiseError(NotEE)
 
-  def asValidator[F[_], R, S](validate: R => F[S])(validOutput: OutputPath)(using ae: Apply[F]): R => F[OutputPath] =
+  def asValidator[F[_], R, S](validate: R => F[S])(validOutput: OutputPath)(using f: Functor[F]): R => F[OutputPath] =
     validate.apply(_).as(validOutput)
 
-  def mapValidator[F[_], R, S](validate: R => F[S])(toValidOutput: S => OutputPath)(using ae: Apply[F]): R => F[OutputPath] =
+  def mapValidator[F[_], R, S](validate: R => F[S])(toValidOutput: S => OutputPath)(using f: Functor[F]): R => F[OutputPath] =
     validate.apply(_).map(toValidOutput)
 
   def validate[F[_] : MonadThrow]: Validator[F] =
