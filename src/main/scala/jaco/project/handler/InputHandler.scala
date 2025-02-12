@@ -8,7 +8,7 @@ import cats.{Apply, FlatMap, Functor, Show}
 import fs2.Chunk
 import jaco.project.OutputMessages.failureMsg
 import jaco.project.error.InputError
-import jaco.project.simpleMain.ErrorOr
+import jaco.project.effectMain.ErrorOr
 import jaco.project.validation.InputValidation.Validator
 
 import scala.concurrent.duration.Duration
